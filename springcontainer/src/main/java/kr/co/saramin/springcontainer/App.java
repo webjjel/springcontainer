@@ -10,11 +10,11 @@ public class App
 {
     public static void main( String[] args )
     {
-    	System.out.println("---------------------testBeanFactory------------------------");
-    	testBeanFactory();
+//    	System.out.println("---------------------testBeanFactory------------------------");
+//    	testBeanFactory();
     	
-    	System.out.println("---------------------testBeanFactory2------------------------");
-    	testBeanFactory2();
+//    	System.out.println("---------------------testBeanFactory2------------------------");
+//    	testBeanFactory2();
     	
     	System.out.println("---------------------testApplicationContext------------------------");
     	testApplicationContext();
@@ -84,16 +84,16 @@ public class App
     	Guestbook gb = null;
     	
     	// type으로 빈 가져오기
-    	user = ac.getBean(User.class);
-    	System.out.println(user.getName());
+//    	user = ac.getBean(User.class);
+//    	System.out.println(user);
     	
     	// id로 가져오기
     	user = (User)ac.getBean("user");
-    	System.out.println(user.getName());
+    	System.out.println(user);
     	
     	// name으로 가져오기
     	user = (User)ac.getBean("myuser");
-    	System.out.println(user.getName());
+    	System.out.println(user);
     	
     	
     	// 같은 타입의 빈이 한 개 이상 있을 때 type으로 가져오기
@@ -104,6 +104,14 @@ public class App
     	// id로 빈 가져오기
     	gb = (Guestbook)ac.getBean("gb");
     	System.out.println(gb.getMessage());
+    	
+    	// id로 가져오기
+    	user = (User)ac.getBean("user2");
+    	System.out.println(user);
+    	
+    	// id로 가져오기
+    	user = (User)ac.getBean("user3");
+    	System.out.println(user);
     	
 //    	System.out.println(ac.getBean("gb") == ac.getBean("gb1"));
     }

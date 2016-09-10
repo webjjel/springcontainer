@@ -10,7 +10,46 @@
 
 	<!-- 빈 설정을 한다 -->
 	<bean id="user" name="myuser" class="kr.co.saramin.springcontainer.User">
-		<constructor-arg value="Test" />
+		<constructor-arg index="0" value="1" />
+		<constructor-arg index="1" value="Test" />
+	</bean>
+
+	<bean id="user2" class="kr.co.saramin.springcontainer.User">
+		<property name="no" value="10" />
+		<property name="name" value="둘리" />
+		<property name="friend" ref="friend" />
+		<property name="list">
+			<list>
+				<value>도우넛</value>
+				<value>영희</value>
+			</list>
+		</property>
+		<property name="set">
+			<set>
+				<value>kim</value>
+				<value>lee</value>
+			</set>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="key1"><value>kim</value></entry>
+				<entry key="key2"><value>lee</value></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="friend" class="kr.co.saramin.springcontainer.Friend">
+		<property name="name" value="도우넛" />
+	</bean>
+
+	<bean id="user3" class="kr.co.saramin.springcontainer.User">
+		<property name="no" value="20" />
+		<property name="name" value="고길동" />
+		<property name="friend">
+			<bean class="kr.co.saramin.springcontainer.Friend">
+				<property name="name" value="희동이" />
+			</bean>
+		</property>
 	</bean>
 
 	<bean id="gb" class="kr.co.saramin.springcontainer.Guestbook" />
